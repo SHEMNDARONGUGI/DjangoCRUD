@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
 
 # Create your views here.
@@ -20,3 +20,8 @@ def add_item(request):
         return  redirect('admin')
 
     return render(request, 'add_item.html')
+
+def delete_item(request, id):
+    product = get_object_or_404(Product, id=id)
+    product.delete()
+    return redirect('admin')
