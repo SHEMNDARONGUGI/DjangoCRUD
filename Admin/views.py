@@ -25,3 +25,17 @@ def delete_item(request, id):
     product = get_object_or_404(Product, id=id)
     product.delete()
     return redirect('admin')
+
+def update_item(request, id):
+    product = get_object_or_404(Product, id=id)
+    
+    if request.method == 'POST':
+        product.name = request.POST['name']
+        product.price = request.POST['price']
+        product.description = request.POST['description']
+        
+        product.save()
+        return redirect('admin')
+    
+    return render(request, 'update_item.html', {'product':product})
+        

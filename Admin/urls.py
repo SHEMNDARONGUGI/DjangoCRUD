@@ -23,5 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.admin, name='admin'),
     path('add_item/', views.add_item, name='add_item'),
-    path('delete/<int:id>/',views.delete_item, name='delete')
+    path('delete/<int:id>/',views.delete_item, name='delete'),
+    path('update/<int:id>/',views.update_item, name='update')
 ]
+
+# CRUD - Create - add_item.html
+        #Read - admin.html
+        #Update - update_item.html
+        #Delete - functional delete button
