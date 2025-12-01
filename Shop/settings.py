@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Admin'
+    'Admin',
+    'django_daraja'
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,33 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# MPESA_ENVIRONMENT = 'sandbox'
+# MPESA_CONSUMER_KEY = 'LvGI2jr0P3RASh0nCNRaCvuuGHXaN9qTfgBP1XgiJpvYqAO9'
+# MPESACONSUMER_SECRET = 'AdAsNc571gFcAXfvnFlRKqhyktAGZdxSMxRXWl7kifURU7FwqWs7hficxdWo9AXR'
+# MPESA_EXPRESS_SHORTCODE = '174379',
+# MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+# INITIATOR_NAME: 'testapi'
+# SECURITY_CREDENTIAL = 'Safaricom123!!'
+# B2C_SHORTCODE = '174379'
+
+# MPESA CONFIGURATIONS
+
+MPESA_ENVIRONMENT = 'sandbox'
+
+MPESA_CONSUMER_KEY = 'LvGI2jr0P3RASh0nCNRaCvuuGHXaN9qTfgBP1XgiJpvYqAO9'
+MPESA_CONSUMER_SECRET = 'AdAsNc571gFcAXfvnFlRKqhyktAGZdxSMxRXWl7kifURU7FwqWs7hficxdWo9AXR'
+
+# STK Push Shortcode
+MPESA_SHORTCODE = '174379'
+MPESA_EXPRESS_SHORTCODE = '174379'
+
+# Passkey for STK Push
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+
+# B2C / Reversal / C2B (optional)
+INITIATOR_NAME = 'testapi'
+SECURITY_CREDENTIAL = 'Safaricom123!!'
+B2C_SHORTCODE = '174379'
+

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django_daraja.mpesa.core import MpesaClient
 from .models import Product
 
 # Create your views here.
@@ -38,4 +39,26 @@ def update_item(request, id):
         return redirect('admin')
     
     return render(request, 'update_item.html', {'product':product})
+
+def payment(request):
+    if request.method == "POST":
+        phone = request.POST.get('phone')
+        amount = int(request.POST.get('amount'))
+        
+        client = MpesaClient()
+        
+        account_ref = 'S. Tech Institute'
+        desc = 'support services payment'
+        
+        callback_url = 'https://callback.com/url'
+        
+        response = client.stk_push(
+            phone_number=phone,
+            amount=amount,
+            account_reference=account_ref,
+            transaction_desc=desc,
+            callback_url=callback_url
+        )
+        return render(request, "payment.html", {"message":"STK Push sent!"})
+    return render(request, 'payment.html')
         
